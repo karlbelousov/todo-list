@@ -1,4 +1,4 @@
-const Field = ({ className = "", id, label, type = "text" }) => {
+const Field = ({ className = "", id, label, type = "text", onInput }) => {
   return (
     <div className={`field ${className}`}>
       <label className="field__label" htmlFor={id}>
@@ -7,9 +7,10 @@ const Field = ({ className = "", id, label, type = "text" }) => {
       <input
         className="field__input"
         id={id}
-        placeholder=" "
+        placeholder=""
         autoComplete="off"
         type={type}
+        onInput={onInput}
       />
     </div>
   );
