@@ -5,6 +5,7 @@ const Field = ({
   type = "text",
   value,
   onInput,
+  ref
 }) => {
   return (
     <div className={`field ${className}`}>
@@ -19,6 +20,7 @@ const Field = ({
         type={type}
         value={value}
         onInput={onInput}
+        ref={ref}
       />
     </div>
   );
