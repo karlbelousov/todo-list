@@ -1,17 +1,15 @@
 import Field from "./Field";
 
-const SearchTaskForm = ({ onSearchInput }) => {
+const SearchTaskForm = ({ searchQuery, setSearchQuery }) => {
   return (
-    <form 
-      className="todo__form" 
-      onSubmit={(event) => event.preventDefault()}
-    >
-      <Field 
+    <form className="todo__form" onSubmit={(event) => event.preventDefault()}>
+      <Field
         className="todo__field"
         label="Search Task"
         id="search-task"
         type="search"
-        onInput={(event) => onSearchInput(event.target.value)}
+        value={searchQuery}
+        onInput={(event) => setSearchQuery(event.target.value)}
       />
     </form>
   );
