@@ -1,4 +1,4 @@
-const RouterLink = ({ to, children, ...rest }) => {
+const RouterLink = ({ to, children, className, ...rest }) => {
   const handleClick = (event) => {
     event.preventDefault();
     window.history.pushState({}, "", to);
@@ -6,7 +6,7 @@ const RouterLink = ({ to, children, ...rest }) => {
   };
 
   return (
-    <a href={to} onClick={handleClick} {...rest}>
+    <a className={className} href={to} onClick={handleClick} {...rest}>
       {children}
     </a>
   );

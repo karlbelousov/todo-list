@@ -1,3 +1,5 @@
+import styles from "./Field.module.scss";
+
 const Field = ({
   className = "",
   id,
@@ -9,12 +11,12 @@ const Field = ({
   ref,
 }) => {
   return (
-    <div className={`field ${className}`}>
-      <label className="field__label" htmlFor={id}>
+    <div className={`${styles.field} ${className}`}>
+      <label className={styles.label} htmlFor={id}>
         {label}
       </label>
       <input
-        className={`field__input ${error ? "is-invalid" : ""}`}
+        className={`${styles.input} ${error ? `${styles.isInvalid}` : ""}`}
         id={id}
         placeholder=""
         autoComplete="off"
@@ -23,7 +25,7 @@ const Field = ({
         onInput={onInput}
         ref={ref}
       />
-      {error && <span className="field__error" title={error}>{error}</span>}
+      {error && <span className={styles.error} title={error}>{error}</span>}
     </div>
   );
 };
