@@ -25,7 +25,7 @@ const useTasks = () => {
         setTimeout(() => {
           setTasks(tasks.filter((task) => task.id !== taskId));
           setDisappearingTaskId(null);
-        }, 4000);
+        }, 2000);
       });
     },
     [tasks],
