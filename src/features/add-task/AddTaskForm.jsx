@@ -5,10 +5,10 @@ import Field from "@/shared/ui/Field";
 import styles from "./AddTaskForm.module.scss";
 
 const AddTaskForm = () => {
-  const { addTask, newTaskTitle, newTaskInputRef, setNewTaskTitle } =
-    useContext(TasksContext);
-
+  const [newTaskTitle, setNewTaskTitle] = useState("");
   const [error, setError] = useState("");
+
+  const { addTask, newTaskInputRef } = useContext(TasksContext);
 
   const clearTaskTitle = newTaskTitle.trim();
   const isNewTaskTitleEmpty = clearTaskTitle.length === 0;
@@ -17,7 +17,7 @@ const AddTaskForm = () => {
     event.preventDefault();
 
     if (!isNewTaskTitleEmpty) {
-      addTask(clearTaskTitle);
+      addTask(clearTaskTitle, () => setNewTaskTitle(""));
     }
   };
 
