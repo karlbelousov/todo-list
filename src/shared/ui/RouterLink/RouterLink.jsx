@@ -1,3 +1,5 @@
+import { BASE_URL } from "@/shared/constans";
+
 const RouterLink = ({ to, children, className, ...rest }) => {
   const handleClick = (event) => {
     event.preventDefault();
@@ -6,7 +8,7 @@ const RouterLink = ({ to, children, className, ...rest }) => {
   };
 
   return (
-    <a className={className} href={to} onClick={handleClick} {...rest}>
+    <a className={className} href={`${BASE_URL}/${to}`} onClick={handleClick} {...rest}>
       {children}
     </a>
   );
