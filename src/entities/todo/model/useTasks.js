@@ -48,9 +48,9 @@ const useTasks = () => {
     const isConfirmed = confirm("Are you sure you want to delete all?");
 
     if (isConfirmed) {
-      tasksAPI.deleteAll(tasks).then(() => dispatch({ type: "DELETE_ALL" }));
+      tasksAPI.deleteAll().then(() => dispatch({ type: "DELETE_ALL" }));
     }
-  }, [tasks]);
+  }, []);
 
   const deleteTask = useCallback((taskId) => {
     tasksAPI.delete(taskId).then(() => {
